@@ -9,22 +9,26 @@
   <input type="text" id="fname" name="fname" /><br /><br />
   <label for="lname">Last name:</label>
   <input type="text" id="lname" name="lname" /><br /><br />
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email" /><br /><br />
   <input type="submit" value="Submit" />
 </form>
 <br /><br />
 {% if contacts %}
+<h3>Contact List</h3>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">List of Names</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
     </tr>
   </thead>
 
   <tbody>
     {% for contact in contacts %}
     <tr>
-      <td>{{ contact.fname }}</td>
-      <td>{{ contact.lname }}</td>
+      <td>{{ contact.name }}</td>
+      <td>{{ contact.email }}</td>
     </tr>
     {% endfor %}
   </tbody>

@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, redirect, url_for
 
 app = Flask(__name__)
 
-contact_list = [{"fname": "test", "lname": "tester"} ]
+contact_list = [{"name": "Testy Testerton", "email": "test@test.com"} ]
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -15,9 +15,10 @@ def add():
         form = request.form
         fname = form['fname']
         lname = form['lname']
+        email = form['email']
         print(fname)
         print(lname)
-        name_dict = {"fname": fname, "lname": lname}
+        name_dict = {"name": fname + " " + lname, "email": email}
         print(name_dict)
         contact_list.append(name_dict)
         print(contact_list)
