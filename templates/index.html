@@ -5,8 +5,10 @@
 <br />
 
 <form action="/add" method="POST">
-  <label for="fname">Name:</label>
-  <input type="text" id="my_name" name="my_name" /><br /><br />
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname" /><br /><br />
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname" /><br /><br />
   <input type="submit" value="Submit" />
 </form>
 <br /><br />
@@ -21,7 +23,8 @@
   <tbody>
     {% for contact in contacts %}
     <tr>
-      <td>{{ contact }}</td>
+      <td>{{ contact.fname }}</td>
+      <td>{{ contact.lname }}</td>
     </tr>
     {% endfor %}
   </tbody>
