@@ -1,11 +1,29 @@
+{% extends 'base.html' %} {% block body %}
+<br />
+<h2>Business Process Automation - HW11</h2>
+<hr />
+<br />
 
+<form action="/add" method="POST">
+  <label for="fname">Name:</label>
+  <input type="text" id="my_name" name="my_name" /><br /><br />
+  <input type="submit" value="Submit" />
+</form>
+<br /><br />
+{% if contacts %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">List of Names</th>
+    </tr>
+  </thead>
 
-{% extends 'base.html' %}
-
-{% block body %}
-
-	<h2> This is my Flask server! </h2>
-
-	<img src="{{ url_for('static', filename='images/flask.jpg') }}" />
-
-{% endblock %}
+  <tbody>
+    {% for contact in contacts %}
+    <tr>
+      <td>{{ contact }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %} {% endblock %}
